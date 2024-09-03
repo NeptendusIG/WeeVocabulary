@@ -20,21 +20,19 @@ python script.py [arguments]
 
 ## Versions
 
-0.1.0 - refactor: Changements primaires pour en faire un package (absolute import)
-1.0.0 - fix: Programme fonctionnel
+0.1.0 - 02/09/2024 - refactor: Changements primaires pour en faire un package (absolute import)
+1.0.0 - 03/09/2024 - fix: Programme fonctionnel
 
 ## Améliorations futurs
 
 **Road map :**
 
-1.0.0 - //24 - Mise en fonctionnement
-1.1.0 // -
+1.1.0 - // - chore: supprimer les fichiers inutiles
 
 **Suggestions :**
 
 - Sauvegarde des mots
 - Logging propre dans tous les modules
-- Relancer le script (main.py - line 74) : changer pour que cela copie la façon dont le srcipt a été lancé
 
 ## Plus d'informations
 
