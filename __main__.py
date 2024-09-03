@@ -5,7 +5,7 @@
 """
 """
 # -- IMPORTS --
-import os
+import os, sys
 # Modules
 from utility import File, GUI, Settings
 from weevocabulary.function_dir.manage_text import get_new_words, establish_files # add_new_words, create_cards_from_waitlist, 
@@ -69,8 +69,8 @@ def actualiser_nouveaux_mots(mots: list[tuple[str, str]], dataframe: DataFrame):
         file.write("")
         logger.info("Get Data: list DELETED")
     # 4 - Update GUI (quit and restart)
-    logger.info("Actualisation terminée")
-    Settings.relaunch_program()
+    logger.info("Actualisation terminée (reboot)")
+    Settings.relaunch_package("weevocabulary")
 
 
 def create_anki_cards(dataframe: DataFrame):
@@ -90,8 +90,8 @@ def create_anki_cards(dataframe: DataFrame):
     data_path = File.JsonFile.get_value_jsondict(SETTINGS_PATH, "data", handle_keyERROR=False)
     dataframe.to_csv(data_path, index=False)
     # 4 - Quit
-    logger.info("Création de cartes terminée")
-    Settings.relaunch_program()
+    logger.info("Création de cartes terminée (reboot)")
+    Settings.relaunch_package("weevocabulary")
 
 
 # -- PROGRAMME --

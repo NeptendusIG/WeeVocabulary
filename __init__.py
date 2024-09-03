@@ -5,8 +5,8 @@
 #################################
 """Metadata"""
 __author__ = "Gaétan Lepage"
-__version__ = "0.1.0"    # primary changes (not functional)
-__modif__ = "2024-09-02"
+__version__ = "1.0.0"    # fonctionnel
+__modif__ = "2024-09-03"
 
 """Requirements"""
 # Built-in packages

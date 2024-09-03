@@ -12,12 +12,14 @@ Le nom détermine l'appartenance, plus que son id
 
 # -- IMPORTS --
 # Modules
-# import os  
-from utility import *
+import os  
+from utility import Settings, File
 import weevocabulary.function_dir.ankicard_template as tmp
 import genanki
 
-# Classes
+# Settings
+logger = Settings.setup_logging("debbugging")
+
 # -- FONCTIONS DÉFINIES --
 def card_to_test(info, model, deck_id=20000):
     note = genanki.Note(

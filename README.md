@@ -20,7 +20,8 @@ python script.py [arguments]
 
 ## Versions
 
-0.1.0 -
+0.1.0 - refactor: Changements primaires pour en faire un package (absolute import)
+1.0.0 - fix: Programme fonctionnel
 
 ## Améliorations futurs
 
@@ -33,6 +34,7 @@ python script.py [arguments]
 
 - Sauvegarde des mots
 - Logging propre dans tous les modules
+- Relancer le script (main.py - line 74) : changer pour que cela copie la façon dont le srcipt a été lancé
 
 ## Plus d'informations
 
