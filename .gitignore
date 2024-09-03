@@ -1,0 +1,12 @@
+# Exclure les fichiers temporaires ou binaires
+*.log
+*.pyc
+*.pyo
+
+# Exclure les dossiers spécifiques
+__pycache__/
+env/
+
+# Exclure les fichiers des éditeurs
+.vscode/
+.idea/
