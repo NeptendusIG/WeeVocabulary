@@ -10,6 +10,16 @@ Description :
 
 - **Python** : `Python 3.8+`
 - ## **Dépendances** :
+  - cached-property==1.5.2
+  - genanki==0.13.1
+  - gTTS==2.5.3
+  - libretranslatepy==2.1.1
+  - lingua-language-detector==2.0.2
+  - pandas==2.2.2
+  - tk==0.1.0
+  - translate==3.6.1
+  - ttkbootstrap==1.10.1
+  - utility (local)
 
 ## Utilisation
 

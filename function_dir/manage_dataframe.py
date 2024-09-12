@@ -35,6 +35,7 @@ logger = Settings.setup_logging("debugging")
 HEADERS_DATAFRAME = ['date', 'word', 'language', 'count', 'status', 'front', 'back']
 STATUS = ['waiting', 'processed']
 COUNT_BEFORE_ANKI = 3
+SETTINGS_PATH = "settings_weevoc.json"
 count_audio = 0
 
 # -- LISTES COMPLÈTE --
@@ -73,12 +74,14 @@ def add_new_words(new_words, dataframe):
     for word, lang in not_known:
         row = {"date": time.strftime("%d/%m/%Y"), "word": word, "language": lang, "count": 1, "status": "waiting"}
         if lang == "fr":
-            path = create_fr_audio(word, f"data/output/audio_{lang}_{word}")
+            output = File.JsonFile.get_value_jsondict(SETTINGS_PATH, "audio_path")
+            path = create_fr_audio(word, output+f"/{lang}_{word}")  # -> data/output/audio/fr_constant_001.mp3
             row["front"] = path
             row["back"] = word
         elif lang == "en":
             translation_fr = translate_to_french(word)
             if word.lower() in translation_fr.lower():  # Le mot en français a été confondu
+                output = File.JsonFile.get_value_jsondict(SETTINGS_PATH, "audio_path")
                 path = create_fr_audio(word, "data/output/fr_audio")
                 row["front"] = path
                 row["back"] = word
@@ -100,7 +103,7 @@ def create_fr_audio(word, save_path="data/output/fr_audio"):
     # 1 - Rassembler infos (nom et chemins)
     count_audio += 1
     filename = f"{count_audio:0>3}.mp3"
-    filepath = f"{save_path}/{filename}"
+    filepath = f"{save_path}_{filename}"
     # 2 - Créer le fichier audio
     speech = gTTS(text=word, lang='fr', slow=False)
     speech.save(filepath)
